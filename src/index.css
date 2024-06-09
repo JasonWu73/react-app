@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ----- NProgress 浅色主题样式 ----- */
+#nprogress .bar {
+  background-color: theme('colors.sky.500');
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px theme('colors.sky.500'),
+  0 0 5px theme('colors.sky.500');
+}
+
+#nprogress .spinner-icon {
+  border-top-color: theme('colors.sky.500');
+  border-left-color: theme('colors.sky.500');
+}
+
+/* ----- NProgress 深色主题样式 ----- */
+html[data-theme="dracula"] #nprogress .bar {
+  background-color: theme('colors.rose.500');
+}
+
+html[data-theme="dracula"] #nprogress .peg {
+  box-shadow: 0 0 10px theme('colors.rose.500'),
+  0 0 5px theme('colors.rose.500');
+}
+
+html[data-theme="dracula"] #nprogress .spinner-icon {
+  border-top-color: theme('colors.rose.500');
+  border-left-color: theme('colors.rose.500');
+}
+
+/* 表单中必填项菜单使用红色星号标明 */
+.required::after {
+  content: '*';
+  color: theme('colors.rose.500');
+  @apply ml-1;
+}
